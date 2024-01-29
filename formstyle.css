@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;700&family=Montserrat&family=Playfair+Display:ital,wght@1,400;1,600&display=swap');
+.result{
+    font-size: medium;
+    font-weight: bold;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #607beb;
+    font-weight: bold;
+    }
+    
+h1 {
+    text-align: center;
+     margin: 20px 0;
+}
+
+.question {
+    background-color: #7fcdec;
+    border: 5px double #191818;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ec1e13;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border:2px solid blacks;
+    border-radius: 5px;
+}
+
+.result {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+ }
+  

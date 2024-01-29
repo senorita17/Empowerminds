@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Blog Webpage</title>
+  <style>
+    body{
+        background-color: rgb(245, 245, 220);
+    }
+    /* CSS for the blog section */
+    .header-section {
+      height: 300px;
+      background: url('https://www.pinclipart.com/picdir/big/201-2017638_clip-art-royalty-free-library-only-handle-it.png') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(17, 17, 17);
+      text-align: center;
+      font-size: 2.5em;
+
+
+
+
+    }
+
+
+    .blog-section {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: rgb(153, 98, 59);
+      padding: 10px;
+      padding-left: 10px;
+    }
+
+    .current-blogs {
+      flex: none;
+      padding: 30px;
+      background-color: rgb(181, 135, 114);
+      padding: 10px;
+      padding-right: 170px;
+      border-radius: 10px;
+    }
+
+    .blog-links {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .blog-link {
+      margin-bottom: 10px;
+    }
+
+    .blog-content {
+      display: none;
+    }
+
+    .blog-content.active {
+      display: block;
+    }
+
+    .blog-writing-section {
+      flex: 1;
+      padding: 20px;
+      
+    }
+    textarea{
+      padding-left: 50px;
+      border-radius: 10px;
+      background-color: beige;
+      /* Add space above the textarea */
+      margin-left: 100px; 
+      margin-top: -20px;
+      border-color: black;
+    }
+    .postbtn {
+      background-color: rgb(181, 135, 114);
+      border-radius: 7px;
+      margin-left: 110px;
+      size: 30px;
+    }
+    .namebox{
+      border-radius: 7px;
+      background-color: beige;
+      padding: 10px;
+      margin-left: 37px;
+    }
+
+    .blog-card {
+      margin-top: 20px;
+      padding: 10px;
+      border: 3px solid #ccc;
+      border-radius: 5px;
+      border-color: black;
+      border-style: double;
+      background-color: rgb(181, 135, 114);
+    }
+    .keyword-card {
+    flex: none;
+    padding: 20px;
+    background-color: rgb(181, 135, 114);
+    border-radius: 10px;
+    margin-left: 20px;
+    height: 300px;
+    width: 200px; 
+    /* Set the height to match the recent story section */
+    margin-left: 700px;
+    margin-bottom: 20px;
+    margin-top: -232px;
+  }
+
+  .keyword-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .keyword {
+    margin-bottom: 10px;
+    background-color: beige;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .blog-link{
+    color: beige;
+  }
+  </style>
+</head>
+<body>
+  <div id="share your story">
+<div class="header-section">
+    <h1 class="title">Share Your Story</h1>
+</div>
+<div class="blog-section">
+    <div class="current-blogs">
+      <h2>Recently Shared Stories</h2>
+      <ul class="blog-links">
+        <li class="blog-link"><a href="#" class="blog-link">Battling mental health.....</a></li>
+        <li class="blog-link"><a href="#" class="blog-link">Through virtual hugs and.....</a></li>
+        <li class="blog-link"><a href="#" class="blog-link">We exchanged coping strategies.....</a></li>
+      </ul>
+    </div>
+    <div class="blog-writing-section">
+      <h2>Hey! Share Your Story</h2>
+      <form>
+        <label for="name"><b>NAME :</b></label>
+        <input  class='namebox' type="text" id="name" name="name" required><br><br>
+        <label for="content"><b>CONTENT :</b></label><br>
+        <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+        <button  class = "postbtn" type="submit">Post</button>
+      </form>
+      <div class="keyword-card">
+        <h2>Popular Keywords and Hashtags</h2>
+        <ul class="keyword-list">
+          <li class="keyword"> #MentalHealth </li>
+          <li class="keyword"> #Hope </li>
+          <li class="keyword"> #CommunitySupport </li>
+          <li class="keyword"> #BreakingChains </li>
+          <li class="keyword"> #InvisibleBattles </li>
+          <!-- Add more keywords and hashtags as needed -->
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  <div class="blog-card">
+    <h2>Cassidy</h2>
+    <p>"Battling mental health felt like navigating a storm in the dark. The isolation was suffocating.
+       One day, I stumbled upon a blog that spoke my unspoken pain. It was a lifeline. Slowly, I began sharing my journey.
+        The community embraced me without judgment, offering empathy and support. We exchanged coping strategies, celebrated small victories,
+         and understood the weight of invisible battles. Through virtual hugs and shared tears, I found strength. Together, we dismantled the stigma
+          surrounding mental health. Today, I stand resilient, proof that connection and understanding can break the chains of silence. There's hope in shared stories."
+
+
+
+
+
+    </p>
+  </div>
+  </div>
+  <script src="story .js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

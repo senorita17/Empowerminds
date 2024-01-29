@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dctr.css">
+    <title>Doctor Booking</title>
+</head>
+<body>
+<div id="doctor page">
+    <div class="container">
+        <div class="doctor-info">
+            <!-- Doctor Cards -->
+            <div class="doctor-card" id="doctor1">
+                <img  src="https://pngimg.com/d/doctor_PNG15992.png" alt="Doctor 1">
+                <h2 class="doctor-name" style="white-space: nowrap;">Dr. John Doe</h2> 
+                <p class="doctor-details">Specialty: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    ecati consequatur ratione numquam 
+                    . alias accusantium quidem magni laborum numquam cumque qui quas</p>
+            </div>
+
+            <div class="doctor-card" id="doctor2">
+                <img src="https://i.pinimg.com/736x/00/f8/e6/00f8e62a60bba40c1cbc109b2a8c559a.jpg" alt="Doctor 2">
+                <h2 class="doctor-name" style="white-space: nowrap;">Dr. Jane Smith</h2>
+                <p class="doctor-details">Specialty: Lorem ipsum dolor sit amet consectetur,
+                     usandae eveniet doloribus 
+                     magnam ducimus voluptatibus, optio omnis alias placeat.</p>
+            </div>
+
+            <div class="doctor-card" id="doctor3">
+                <img src="https://www.bangaloregenesishospital.com/wp-content/uploads/2022/01/medical-doctor-image.png" alt="Doctor 4">
+                <h2 class="doctor-name" style="white-space: nowrap;" >Dr. John Doe</h2>
+                <p class="doctor-details">Specialty: Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                     reprehenderit, 
+                    vitae dolorem voluptas rem fugiat autem in! Numquam.</p>
+            </div>
+
+            <div class="doctor-card" id="doctor4">
+                <img src="https://www.vhv.rs/dpng/d/409-4091274_doctors-and-nurses-transparent-png-image-indian-doctor.png" alt="Doctor 4">
+                <h2 class="doctor-name" style="white-space: nowrap;">Dr. John Doe</h2>
+                <p class="doctor-details">Specialty: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     is fugit,
+                     mollitia praesentium eos magni dolor veritatis quam.</p>
+            </div>
+
+
+        </div>
+
+        <!-- Booking Form -->
+        <div id="booking-form" class="booking-form">
+            <h2>Book an Appointment</h2>
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="doctor">Select Doctor:</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="doctor1">Dr. John Doe - Cardiologist</option>
+                    <option value="doctor2">Dr. Jane Smith - Neurologist</option>
+                </select>
+
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="button" onclick="showPaymentForm()">Book Now</button>
+            </form>
+            <div id="payment-form" class="form-block" style="display: none;">
+                <h3>Payment Details</h3>
+                <!-- Payment form fields go here -->
+                <form id="payment-details-form">
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required>
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" required>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </form>
+                <!-- Add other payment fields as needed -->
+    
+                <button type="button" onclick="showPaymentConfirmation()">Pay Now</button>
+            </div>
+    
+            <!-- Payment Confirmation Section -->
+            <div id="payment-confirmation" class="payment-confirmation" style="display: none;">
+                <h2>Payment Successful</h2>
+                <p>Your payment has been processed successfully. <span id="tick">&#10004;</span></p>
+                <button onclick="closePaymentConfirmation()">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="dctr.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
